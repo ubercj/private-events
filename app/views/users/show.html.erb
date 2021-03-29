@@ -1,0 +1,8 @@
+<h1 class="page_heading">User</h1>
+
+<p>Name: <%= @user.name %></p>
+
+<nav class="bottom">
+  <%= link_to "Home", root_path%>
+  <%= link_to "Sign Out", logout_path, method: :delete %>
+</nav>

@@ -1,0 +1,11 @@
+<h1 class="page_heading">Sign In</h1>
+
+<%= form_with url: login_path do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.submit "Log In" %>
+<% end %>
+
+<nav class="bottom">
+  <%= link_to "Home", root_path %>
+</nav>

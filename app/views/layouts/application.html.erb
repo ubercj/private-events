@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    
+
+    <nav class="top">
+      <div class="top-bar-container">
+        <div class="name-button">
+          <% if logged_in? %>
+            <p>Current user: <%=link_to current_user.name, user_path(current_user) %></p>
+          <% else %>
+            <p>Nobody is logged in.</p>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+
+
     <%= yield %>
   </body>
 </html>

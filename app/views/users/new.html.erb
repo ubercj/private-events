@@ -1,0 +1,16 @@
+<h1 class="page_heading">Create an account</h1>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.submit %>
+<% end %>
+
+<nav class="bottom">
+  <%= link_to "Home", root_path%><br>
+  <% if logged_in? %>
+    <%= link_to "Log Out", logout_path, method: :delete%>
+  <% else %>
+    <%= link_to "Already have an account? Sign In", login_path %>
+  <% end %>
+</nav>
