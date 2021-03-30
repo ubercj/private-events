@@ -1,0 +1,15 @@
+<h1 class="page_header">All Events</h1>
+
+<div class="event_feed">
+  <% @events.each do |event| %>
+    <div class="event_container">
+      <p>Event name here</p>
+      <p>Created by: <%= event.creator.name %></p>
+      <p>Date: <%= event.date %></p>
+    </div>
+  <% end %>
+</div>
+
+<nav class="bottom">
+  <%= link_to "Home", root_path%>
+</nav>

@@ -2,6 +2,15 @@
 
 <p>Name: <%= @user.name %></p>
 
+<div class="event_feed">
+  <% @user.created_events.each do |event| %>
+    <div class="event_container">
+      <p>Event name here</p>
+      <p><%= event.date %></p>
+    </div>
+  <% end %>
+</div>
+
 <nav class="bottom">
   <%= link_to "Home", root_path%>
   <%= link_to "Sign Out", logout_path, method: :delete %>

@@ -15,7 +15,36 @@
  */
 
  .top {
+   width: 100%;
+   top: 0;
+   left: 0;
+   padding-top: 5px;
    text-align: center;
    font-size: x-large;
+   background-color: darksalmon;
    border-bottom: 2px solid black;
+ }
+
+ .top-bar-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-left: 5px;
+   padding-right: 5px;
+ }
+
+ .bottom {
+   width: 100%;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   padding-left: 10px;
+   background-color: darksalmon;
+   border-top: 2px solid black;
+ }
+
+ .event_feed {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
  }

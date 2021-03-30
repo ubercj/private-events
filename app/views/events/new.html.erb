@@ -1,0 +1,13 @@
+<h1 class="page_header">Create your event</h1>
+
+<%= form_with model: @event do |form| %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <%= form.label :date %>
+  <%= form.text_field :date %>
+  <%= form.submit %>
+<% end %>
+
+<nav class="bottom">
+  <%= link_to "Home", root_path%>
+</nav>
