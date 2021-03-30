@@ -21,9 +21,24 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    @event.attendees << User.find(invite_params[:attendee_id])
+    redirect_to event_path(@event)
+  end
+
   private
 
   def event_params
-    params.require(:event).permit(:date)
+    params.require(:event).permit(:date, :description)
+  end
+
+  def invite_params
+    params.require(:event).permit(:attendee_id)
   end
 end

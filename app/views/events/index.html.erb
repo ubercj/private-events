@@ -1,13 +1,27 @@
 <h1 class="page_header">All Events</h1>
 
 <div class="event_feed">
-  <% @events.each do |event| %>
-    <div class="event_container">
-      <p>Event name here</p>
-      <p>Created by: <%= event.creator.name %></p>
-      <p>Date: <%= event.date %></p>
-    </div>
-  <% end %>
+  <div class="attended_events_feed">
+    <h4>Past Events</h4>
+    <% Event.past.each do |event| %>
+      <div class="event_container">
+        <p><%= event.creator.name %>'s Event</p>
+        <p>Date: <%= event.date %></p>
+        <p><%= link_to "Go to event", event_path(event) %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="upcoming_events_feed">
+    <h4>Upcoming Events</h4>
+    <% Event.upcoming.each do |event| %>
+        <div class="event_container">
+          <p><%= event.creator.name %>'s Event</p>
+          <p>Date: <%= event.date %></p>
+          <p><%= link_to "Go to event", event_path(event) %></p>
+        </div>
+    <% end %>
+  </div>
 </div>
 
 <nav class="bottom">

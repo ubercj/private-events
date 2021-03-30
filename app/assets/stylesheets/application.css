@@ -42,8 +42,20 @@
    background-color: darksalmon;
    border-top: 2px solid black;
  }
-
+ 
  .event_feed {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+ }
+
+ .event_container {
+   border: 1px solid black;
+   padding: 5px;
+   margin: 3px;
+ }
+
+ .created_events_feed, .attended_event_feed {
    display: flex;
    flex-direction: column;
    justify-content: center;

@@ -1,6 +1,4 @@
-<h1 class="page_heading">User</h1>
-
-<p>Name: <%= @user.name %></p>
+<h1 class="page_heading"><%= @user.name %></h1>
 
 <div class="event_feed">
   <div class="created_events_feed">
@@ -9,16 +7,33 @@
       <div class="event_container">
         <p><%= event.description %></p>
         <p><%= event.date %></p>
+        <p><%= link_to "Go to event", event_path(event) %></p>
       </div>
     <% end %>
   </div>
   <div class="attended_events_feed">
-    <h4>Attending Events</h4>
     <% @user.attended_events.each do |event| %>
-      <div class="event_container">
-        <p>Event name here</p>
-        <p><%= event.date %></p>
-      </div>
+      <% if event.date < Date.today %>
+        <div class="previously_attended_events_feed">
+          <h4>Previously Attended Events</h4>
+          <div class="event_container">
+            <p><%= event.creator.name %>'s Event</p>
+            <p><%= event.description %></p>
+            <p><%= event.date %></p>
+            <p><%= link_to "Go to event", event_path(event) %></p>
+          </div>
+        </div>
+      <% else %>
+        <div class="upcoming_events_feed">
+          <h4>Upcoming Events</h4>
+          <div class="event_container">
+            <p><%= event.creator.name %>'s Event</p>
+            <p><%= event.description %></p>
+            <p><%= event.date %></p>
+            <p><%= link_to "Go to event", event_path(event) %></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

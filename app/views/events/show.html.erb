@@ -1,14 +1,17 @@
-<h1 class="page_header">Event Name Here</h1>
+<h1 class="page_header"><%= @event.creator.name %>'s Event</h1>
 
-<p>Creator: <%= event.creator.name %></p>
-<p>Date: <%= event.date %></p>
-<p>Description: <%= event.description %></p>
+<p>Date: <%= @event.date %></p>
+<p>Description: <%= @event.description %></p>
 <p>Attendees:</p>
 <ul>
-  <% event.attendees.each do |attendee| %>
+  <% @event.attendees.each do |attendee| %>
     <li><%= attendee.name %></li>
   <% end %>
 </ul>
+
+<% if current_user == @event.creator %>
+  <p><%= link_to "Invite Attendees", edit_event_path(@event) %></p>
+<% end %>
 
 <nav class="bottom">
   <%= link_to "Home", root_path%>

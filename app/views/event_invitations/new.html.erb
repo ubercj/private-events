@@ -1,0 +1,13 @@
+<h1 class="page_header">Invite Guests</h1>
+
+<%= form_with model: @event_invitation do |form| %>
+  <%= form.label :attendee_id, "Choose who to invite:" %>
+  <%= form.collection_select :attendee_id, User.order(:id), :id, :name %><br>
+  <%= form.label :invited_event_id, "Event Id" %>
+  <%= form.text_field :invited_event_id %>
+  <%= form.submit "Add Invitation" %>
+<% end %>
+
+<nav class="bottom">
+  <%= link_to "Home", root_path%>
+</nav>

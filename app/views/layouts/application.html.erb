@@ -17,12 +17,18 @@
       <div class="top-bar-container">
         <div class="name-button">
           <% if logged_in? %>
-            <p>Current user: <%=link_to current_user.name, user_path(current_user) %></p>
+            <p>Welcome, <%=link_to current_user.name, user_path(current_user) %></p>
           <% else %>
             <p>Nobody is logged in.</p>
           <% end %>
         </div>
+        <div class="home_button">
+          <h1><%= link_to "Private Events", root_path %></h1>
+        </div>
         <% if logged_in? %>
+          <div class="new_event_button">
+            <%= link_to "Create Event", new_event_path %>
+          </div>
           <div class="logout_button">
             <%= link_to "Log Out", logout_path, method: :delete %>
           </div>
