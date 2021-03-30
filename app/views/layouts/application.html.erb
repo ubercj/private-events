@@ -24,7 +24,7 @@
         </div>
         <% if logged_in? %>
           <div class="logout_button">
-            <%= link_to "Log Out", logout_path, method: :date %>
+            <%= link_to "Log Out", logout_path, method: :delete %>
           </div>
         <% else %>
           <div class="login_button">

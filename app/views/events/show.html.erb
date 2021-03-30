@@ -3,6 +3,12 @@
 <p>Creator: <%= event.creator.name %></p>
 <p>Date: <%= event.date %></p>
 <p>Description: <%= event.description %></p>
+<p>Attendees:</p>
+<ul>
+  <% event.attendees.each do |attendee| %>
+    <li><%= attendee.name %></li>
+  <% end %>
+</ul>
 
 <nav class="bottom">
   <%= link_to "Home", root_path%>
